@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ionosphere + SVC</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section>
+<h1>Classificação da Base Ionosphere com SVC</h1>
+<p>Support Vector Classification usando Scikit-Learn</p>
+<img src="assets/capa-ionosphere.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Dataset Ionosphere</h2>
+<img src="assets/dataset-ionosphere.png" class="slide-img" onclick="openModal(this.src)">
+<ul>
+<li>351 instâncias</li>
+<li>34 atributos</li>
+<li>2 classes: Good e Bad</li>
+</ul></section>
+
+<section><h2>Fluxo do Projeto</h2>
+<img src="assets/fluxo-projeto.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Modelo 1 - Linear</h2>
+<img src="assets/modelo-linear.png" class="slide-img" onclick="openModal(this.src)">
+<pre><code>SVC(kernel='linear', C=1)</code></pre>
+</section>
+
+<section><h2>Resultados Linear</h2>
+<img src="assets/resultado-linear.png" class="slide-img" onclick="openModal(this.src)">
+<p>Acurácia: 89.2%</p>
+</section>
+
+<section><h2>Modelo 2 - RBF</h2>
+<img src="assets/modelo-rbf.png" class="slide-img" onclick="openModal(this.src)">
+<pre><code>SVC(kernel='rbf', C=10, gamma='scale')</code></pre>
+</section>
+
+<section><h2>Resultados RBF</h2>
+<img src="assets/resultado-rbf.png" class="slide-img" onclick="openModal(this.src)">
+<p>Acurácia: 95.1%</p>
+</section>
+
+<section><h2>Modelo 3 - Poly</h2>
+<img src="assets/modelo-poly.png" class="slide-img" onclick="openModal(this.src)">
+<pre><code>SVC(kernel='poly', degree=3, C=10)</code></pre>
+</section>
+
+<section><h2>Resultados Poly</h2>
+<img src="assets/resultado-poly.png" class="slide-img" onclick="openModal(this.src)">
+<p>Acurácia: 93.7%</p>
+</section>
+
+<section><h2>Comparação Geral</h2>
+<img src="assets/comparacao-modelos.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Impacto do C</h2>
+<img src="assets/impacto-c.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Impacto do Gamma</h2>
+<img src="assets/impacto-gamma.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Impacto do Degree</h2>
+<img src="assets/impacto-degree.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Fronteiras de Decisão</h2>
+<img src="assets/fronteiras-comparacao.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Análise dos Resultados</h2>
+<img src="assets/analise-resultados.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+<section><h2>Conclusão</h2>
+<img src="assets/conclusao.png" class="slide-img" onclick="openModal(this.src)">
+</section>
+
+</div>
+</div>
+
+<div id="imageModal" class="modal">
+<span class="close" onclick="closeModal()">&times;</span>
+<img id="modalImg" class="modal-content">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script>
+Reveal.initialize({hash:true, slideNumber:true, progress:true});
+
+function openModal(src){
+ document.getElementById('imageModal').style.display='block';
+ document.getElementById('modalImg').src=src;
+}
+function closeModal(){
+ document.getElementById('imageModal').style.display='none';
+}
+</script>
+
+</body>
+</html>
